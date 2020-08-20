@@ -152,9 +152,9 @@ class Instructor extends Lambdasian {
   }
   test(student){
   return ((student.grade + Math.random()*100) / 2)
-  //- Now that our students have a grade build out a method on the Instructor (this will be used by _BOTH_ instructors and PM's) that will randomly add or subtract points to a student's grade. _Math.random_ will help.
 }
 }
+
 /*
   TASK 5
     - Write a Student class extending Lambdasian.
@@ -176,7 +176,7 @@ super(obj);
 this.previousBackground = obj.previousBackground;
 this.className = obj.className;
 this.favSubjects = obj.favSubjects;
-this.grade = 80;
+this.grade = obj.grade;
   }
 listSubjects() {
   return `Loving ${this.favSubjects}`;
@@ -197,6 +197,10 @@ graduate(grade){
   }
 }
 }
+
+
+
+
 
 /*
   TASK 6
@@ -233,6 +237,18 @@ debugsCode(student, subject){
       + This method, when called, will check the grade of the student and see if they're ready to graduate from Lambda School
       + If the student's grade is above a 70% let them graduate! Otherwise go back to grading their assignments to increase their score.
 */
+
+let steven = new Student({
+  name: 'Steven',
+  age: 28,
+  location: 'New York',
+  previousBackground: 'hospitality manager',
+  className: 'Web 35',
+  favSubjects: 'prototypes and classes',
+  grade: 80,
+});
+
+console.log(steven.graduate(steven.grade));
 
 ///////// END OF CHALLENGE /////////
 ///////// END OF CHALLENGE /////////
